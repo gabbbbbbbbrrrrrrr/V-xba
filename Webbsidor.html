@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VÄXPA | Webbutveckling</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-wrapper">
+            <div class="logo-area">
+                <h1>VÄXPA<span>.</span></h1>
+                <p>Digital Design & Code</p>
+            </div>
+            <div class="hero-image-container">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" alt="Växpa Coding">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Start</a></li>
+                    <li><a href="Profil.html">Grafisk Profil</a></li>
+                    <li><a href="Webbsidor.html" class="active">Webbutveckling</a></li>
+                    <li><a href="index.html#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-meta">
+                <p>Est. 2024 • Malmö</p>
+            </div>
+        </div>
+    </aside>
+
+    <div class="main-content">
+        
+        <section class="content-block">
+            <div class="badge">Tjänster</div>
+            <h2>Webbutveckling</h2>
+            <p class="lead">
+                Vi bygger moderna, snabba och responsiva webbplatser som inte bara ser bra ut, utan också levererar resultat. Genom att kombinera estetik med ren kod skapar vi digitala upplevelser som anpassar sig efter alla skärmar. Från enkla landningssidor till komplexa webblösningar – vi hjälper ditt företag att ta plats digitalt.
+            </p>
+        </section>
+
+        <section class="content-block">
+            <h3>Digitala Lösningar</h3>
+            
+            <div class="carousel-wrapper">
+                
+                <button class="arrow-btn" id="scrollLeft">←</button>
+
+                <div class="carousel-track" id="slider">
+                    
+                    <div class="carousel-card">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=2064&auto=format&fit=crop" alt="Responsive Design">
+                        <div class="card-caption">Responsiv Design</div>
+                    </div>
+
+                    <div class="carousel-card">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop" alt="Ren Kod">
+                        <div class="card-caption">Frontend & Backend</div>
+                    </div>
+
+                    <div class="carousel-card">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" alt="E-handel">
+                        <div class="card-caption">E-handelslösningar</div>
+                    </div>
+
+                    <div class="carousel-card">
+                        <img src="https://images.unsplash.com/photo-1551288049-bbbda536339a?q=80&w=2070&auto=format&fit=crop" alt="SEO & Analys">
+                        <div class="card-caption">Sökmotoroptimering</div>
+                    </div>
+
+                     <div class="carousel-card">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop" alt="Support">
+                        <div class="card-caption">Support & Drift</div>
+                    </div>
+
+                </div>
+
+                <button class="arrow-btn" id="scrollRight">→</button>
+            </div>
+
+        </section>
+
+        <section class="content-block process-box">
+            <h3>Vår Utvecklingsprocess</h3>
+            <p>
+                Vi på VÄXPA tror på en agil arbetsprocess. Vi börjar alltid med att förstå era affärsmål och användarnas behov. Sedan går vi från trådskisser och design till den faktiska kodningen. Genom kontinuerliga tester och feedback ser vi till att den färdiga webbplatsen är optimerad för både hastighet, säkerhet och användarvänlighet innan lansering.
+            </p>
+        </section>
+
+        <footer class="page-footer">
+            <div class="footer-content">
+                <div class="col">
+                    <h4>VÄXPA.</h4>
+                    <p>Skapad med kod & kärlek.</p>
+                </div>
+                <div class="col">
+                    <h4>Hitta oss</h4>
+                    <p>Storgatan 12<br>211 43 Malmö</p>
+                </div>
+                <div class="col">
+                    <h4>Socialt</h4>
+                    <a href="#">Instagram</a><br>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 VÄXPA Agency. Alla rättigheter förbehållna.
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        const slider = document.getElementById('slider');
+        const leftBtn = document.getElementById('scrollLeft');
+        const rightBtn = document.getElementById('scrollRight');
+
+        leftBtn.addEventListener('click', () => {
+            slider.scrollBy({ left: -100, behavior: 'smooth' });
+        });
+
+        rightBtn.addEventListener('click', () => {
+            slider.scrollBy({ left: 100, behavior: 'smooth' });
+        });
+    </script>
+
+</body>
+</html>

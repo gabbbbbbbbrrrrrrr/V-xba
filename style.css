@@ -1,0 +1,439 @@
+/* --- 1. FONTS & SETUP --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap');
+
+:root {
+  --col-dark: #3E3F5B;      /* Sidebar Background */
+  --col-light: #F6F1DE;     /* Content Background */
+  --col-accent: #ACD3AB;    /* Sage Green Highlights */
+  --col-border: #BAB2A6;    /* Muted Beige */
+  
+  --font-head: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  
+  --sidebar-width: 35%;     /* Width of the fixed left side */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--col-light);
+  color: var(--col-dark);
+}
+
+/* Din logotyp-inställning */
+.logo-image {
+    width: 180px;  
+    height: auto; 
+    margin-bottom: 10px;
+}
+
+/* --- 2. LEFT SIDEBAR (Fixed & Non-Scrollable) --- */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  background-color: var(--col-dark);
+  color: var(--col-light);
+  border-right: 1px solid var(--col-border);
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.sidebar-wrapper {
+  height: 100%;
+  padding: 5vh 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Logo Section */
+.logo-area h1 {
+  font-family: var(--font-head);
+  font-size: 3rem;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+.logo-area h1 span { color: var(--col-accent); }
+.logo-area p {
+  color: var(--col-border);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+
+/* Image Section */
+.hero-image-container {
+  height: 160px;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid var(--col-accent);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.hero-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.hero-image-container:hover img { transform: scale(1.05); }
+
+/* Navigation */
+nav ul { list-style: none; }
+nav li { margin-bottom: 15px; }
+
+nav a {
+  text-decoration: none;
+  color: var(--col-border);
+  font-family: var(--font-head);
+  font-size: 1.3rem;
+  font-weight: 500;
+  transition: 0.3s ease;
+  display: inline-block;
+}
+
+nav a:hover, nav a.active {
+  color: var(--col-accent);
+  transform: translateX(10px);
+}
+
+/* Sidebar Footer */
+.sidebar-meta p { 
+  font-size: 0.75rem; 
+  color: var(--col-border); 
+  opacity: 0.6; 
+}
+
+/* --- 3. RIGHT CONTENT (Scrollable) --- */
+.main-content {
+  margin-left: var(--sidebar-width);
+  width: calc(100% - var(--sidebar-width));
+  min-height: 100vh;
+  padding: 80px 80px 0 80px; 
+}
+
+.content-block { margin-bottom: 100px; }
+
+.badge {
+  display: inline-block;
+  background: var(--col-accent);
+  color: var(--col-dark);
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+h2 {
+  font-family: var(--font-head);
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin-bottom: 30px;
+  color: var(--col-dark);
+}
+
+.lead {
+  font-size: 1.3rem;
+  line-height: 1.7;
+  color: #5e5f7a;
+  max-width: 800px;
+}
+
+/* Services Grid */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid rgba(186, 178, 166, 0.3);
+  box-shadow: 0 5px 20px rgba(62, 63, 91, 0.05);
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--col-accent);
+}
+
+.card h3 {
+  font-family: var(--font-head);
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: var(--col-dark);
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-block;
+  background-color: var(--col-dark);
+  color: var(--col-light);
+  padding: 18px 45px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: background 0.3s;
+}
+.btn-primary:hover {
+  background-color: var(--col-accent);
+  color: var(--col-dark);
+}
+
+/* --- 4. PIZZA BROS REKLAM (DESIGN) --- */
+.pizza-card {
+  display: flex;
+  background-color: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08); 
+  border: 2px dashed #f77f00; /* Streckad kant för erbjudande */
+  max-width: 100%;
+}
+
+.pizza-text {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pizza-badge {
+  background-color: #f77f00; /* Orange badge */
+  color: white;
+  width: fit-content;
+}
+
+.coupon-box {
+  background: #fff5eb;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: inline-block;
+  width: fit-content;
+  border: 1px solid #ffe0b2;
+}
+
+.pizza-image {
+  flex: 1;
+  position: relative;
+  min-height: 300px;
+}
+
+.pizza-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.btn-pizza {
+  display: inline-block;
+  background-color: #d62828;
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  font-family: var(--font-body);
+  transition: transform 0.2s, background 0.3s;
+  width: fit-content;
+  box-shadow: 0 4px 10px rgba(214, 40, 40, 0.3);
+}
+
+.btn-pizza:hover {
+  background-color: #b01e1e;
+  transform: scale(1.05);
+}
+
+/* --- 5. FOOTER (Right Side) --- */
+.page-footer {
+  background-color: var(--col-dark);
+  color: var(--col-light);
+  margin-left: -80px; 
+  margin-right: -80px;
+  padding: 60px 80px 30px 80px;
+  margin-top: 100px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-content h4 {
+  font-family: var(--font-head);
+  margin-bottom: 15px;
+  color: var(--col-accent);
+}
+
+.footer-content a {
+  color: var(--col-border);
+  text-decoration: none;
+  line-height: 1.8;
+  transition: color 0.3s;
+}
+.footer-content a:hover { color: var(--col-accent); }
+
+.copyright {
+  margin-top: 30px;
+  font-size: 0.8rem;
+  color: var(--col-border);
+  opacity: 0.6;
+  text-align: center;
+}
+
+/* --- 6. CAROUSEL / SLIDER STYLES --- */
+
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 5px 20px 5px;
+  scrollbar-width: none; 
+  -ms-overflow-style: none;
+}
+.carousel-track::-webkit-scrollbar { 
+  display: none; 
+}
+
+.carousel-card {
+  min-width: 280px;
+  height: 350px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--col-border);
+  box-shadow: 0 5px 15px rgba(62, 63, 91, 0.1);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.carousel-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--col-accent);
+}
+
+.carousel-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-bottom: 1px solid var(--col-border);
+}
+
+.card-caption {
+  padding: 15px;
+  font-family: var(--font-head);
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--col-dark);
+}
+
+.arrow-btn {
+  background-color: var(--col-dark);
+  color: var(--col-accent);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.arrow-btn:hover {
+  background-color: var(--col-accent);
+  color: var(--col-dark);
+  transform: scale(1.1);
+}
+
+#scrollLeft { margin-right: 15px; }
+#scrollRight { margin-left: 15px; }
+
+
+/* --- 7. RESPONSIVE (Mobile Mode) --- */
+@media (max-width: 900px) {
+  /* Sidebar Reset */
+  .sidebar { 
+    position: relative; 
+    width: 100%; 
+    height: auto; 
+    border-right: none;
+    overflow: visible; 
+  }
+  
+  .sidebar-wrapper {
+    padding: 40px 20px;
+    height: auto;
+    gap: 30px; 
+    display: block; 
+  }
+  
+  .hero-image-container { height: 200px; margin: 30px 0; }
+  
+  /* Main Content Reset */
+  .main-content { 
+    margin-left: 0; 
+    width: 100%; 
+    padding: 40px 20px 0 20px; 
+  }
+  
+  .page-footer { 
+    margin-left: -20px; 
+    margin-right: -20px; 
+    padding: 40px 20px; 
+  }
+  
+  .footer-content { grid-template-columns: 1fr; text-align: center; }
+  h2 { font-size: 2.5rem; }
+
+  /* Pizza Ad Mobile Fix */
+  .pizza-card {
+    flex-direction: column-reverse; /* Bilden överst på mobil */
+    text-align: center;
+  }
+  .pizza-image { height: 250px; min-height: 250px; }
+  .pizza-text { padding: 30px 20px; align-items: center; }
+
+  /* Carousel Mobile Fix */
+  .carousel-wrapper { position: relative; }
+  .arrow-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.8;
+  }
+  #scrollLeft { left: 10px; }
+  #scrollRight { right: 10px; }
+}

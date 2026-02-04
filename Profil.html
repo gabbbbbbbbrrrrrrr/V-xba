@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VÄXPA | Grafisk Profil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-wrapper">
+            <div class="logo-area">
+                <h1>VÄXPA<span>.</span></h1>
+                <p>Digital Design & Code</p>
+            </div>
+            <div class="hero-image-container">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" alt="Växpa Team">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Start</a></li>
+                    <li><a href="Profil.html" class="active">Grafisk Profil</a></li>
+                    <li><a href="Webbsidor.html">Webbutveckling</a></li>
+                    <li><a href="index.html#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-meta">
+                <p>Est. 2024 • Malmö</p>
+            </div>
+        </div>
+    </aside>
+
+    <div class="main-content">
+        
+        <section class="content-block">
+            <div class="badge">Tjänster</div>
+            <h2>Grafisk Profil</h2>
+            <p class="lead">
+                En grafisk profil ger ditt företag en igenkännbar identitet. När du har en grafisk profil kan kunder känna igen ditt företag genom färgkombinationer och logga. Ett inlägg på sociala medier eller reklam kan enkelt anpassas till ert företag genom att använda de färger eller typsnitt som skapats för er. Nedan finns ett exempel på en grafisk profil som vår byrå har tagit fram åt en kund.
+            </p>
+        </section>
+
+        <section class="content-block">
+            <h3>Exempel på Identitet</h3>
+            
+            <div class="carousel-wrapper">
+                
+                <button class="arrow-btn" id="scrollLeft">←</button>
+
+                <div class="carousel-track" id="slider">
+                    
+                    <div class="carousel-card">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=2158&auto=format&fit=crop" alt="Färgpalett">
+                        <div class="card-caption">Färgpalett & Moodboard</div>
+                    </div>
+
+                    <div class="carousel-card">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop" alt="Typsnitt">
+                        <div class="card-caption">Typsnitt & Typografi</div>
+                    </div>
+
+                    <div class="carousel-card">
+                        <img src="https://images.unsplash.com/photo-1626785774573-4b7993143a2d?q=80&w=2070&auto=format&fit=crop" alt="Logotyp Skiss">
+                        <div class="card-caption">Logotyp Design</div>
+                    </div>
+
+                    <div class="carousel-card">
+                        <img src="https://images.unsplash.com/photo-1611532736597-b52a9e381014?q=80&w=2574&auto=format&fit=crop" alt="Visitkort">
+                        <div class="card-caption">Trycksaker</div>
+                    </div>
+
+                     <div class="carousel-card">
+                        <img src="https://images.unsplash.com/photo-1542744094-24638eff58bb?q=80&w=2071&auto=format&fit=crop" alt="Digital Design">
+                        <div class="card-caption">Digitala Tillgångar</div>
+                    </div>
+
+                </div>
+
+                <button class="arrow-btn" id="scrollRight">→</button>
+            </div>
+
+        </section>
+
+        <section class="content-block process-box">
+            <h3>Vår Process</h3>
+            <p>
+                VÄXPAs process för skapandet av en grafisk profil innebär att vi jobbar i nära dialog med företaget. Efter en analys av önskad kundbas lyssnar vi på vad ni på företaget önskar. Utifrån det material vi får arbetar vi fram en grafisk profil som kan användas i alla situationer företaget kan befinna sig i.
+            </p>
+        </section>
+
+        <footer class="page-footer">
+            <div class="footer-content">
+                <div class="col">
+                    <h4>VÄXPA.</h4>
+                    <p>Skapad med kod & kärlek.</p>
+                </div>
+                <div class="col">
+                    <h4>Hitta oss</h4>
+                    <p>Storgatan 12<br>211 43 Malmö</p>
+                </div>
+                <div class="col">
+                    <h4>Socialt</h4>
+                    <a href="#">Instagram</a><br>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 VÄXPA Agency. Alla rättigheter förbehållna.
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        const slider = document.getElementById('slider');
+        const leftBtn = document.getElementById('scrollLeft');
+        const rightBtn = document.getElementById('scrollRight');
+
+        leftBtn.addEventListener('click', () => {
+            slider.scrollBy({ left: -100, behavior: 'smooth' });
+        });
+
+        rightBtn.addEventListener('click', () => {
+            slider.scrollBy({ left: 100, behavior: 'smooth' });
+        });
+    </script>
+
+</body>
+</html>
